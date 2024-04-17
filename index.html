@@ -20,29 +20,78 @@
     <script type="text/babel">
     
       const Button = () => {
-        return <button>comprar</button>;
+        return (
+          <button>comprar</button>
+        );
       }
       const MaiNav = () => {
         return (
           <nav>
-        <ul>
-          <li><a href="#">Link 1</a></li>
-          <li><a href="#">Link 2</a></li>
-          <li><a href="#">Link 3</a></li>
-        </ul>
-        </nav>
-      );
+            <ul>
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+            </ul>
+          </nav>
+        );
       };
+
+      const Produtos = () => {
+        const produto1 = 'Camisa';
+        const produto2 = 'Bermuda';
+
+        return (
+          <div>
+            <button>
+              Comprar {produto1} - R$ {Math.random()*100}
+            </button>
+            <button>
+              Comprar {produto2}- R$ {Math.random()*100}
+            </button>
+
+          </div>
+        );
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       const App = () => {
-        return <div>
-          <MaiNav />
-          <Button />
-          </div>;
+        return (
+          <div>
+            <MaiNav />
+            <Produtos />
+            <Button />
+
+
+
+          </div>
+        );
         
       };
-
-    
       ReactDOM.render(<App />, document.getElementById('app'));
     </script>
   </body>
