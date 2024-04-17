@@ -59,7 +59,21 @@
         );
       }
 
-      
+      const Compras = () => {
+
+
+        const [count, setCount] = React.useState(0);
+
+        return(
+          <div>
+            <button onClick = {() => setCount(count + 1)}> Comprar: {count}</button>
+            <p>Total: {count}</p>
+            <p>Total: R${count * 250}</p>
+          </div>
+        );
+
+
+      };
 
 
 
@@ -91,7 +105,7 @@
           <div>
             <MaiNav />
             <Produtos />
-            <Button />
+            <Compras />
 
 
 
