@@ -37,15 +37,21 @@
       };
 
       const Produtos = () => {
+
+        function handleClick(event){
+          console.log('Comprou: ' + event.target.innerText)
+        }
+
+
         const produto1 = 'Camisa';
         const produto2 = 'Bermuda';
 
         return (
           <div>
-            <button>
+            <button onClick={handleClick}>
               Comprar {produto1} - R$ {Math.random()*100}
             </button>
-            <button>
+            <button onClick={handleClick}>
               Comprar {produto2}- R$ {Math.random()*100}
             </button>
 
@@ -53,6 +59,7 @@
         );
       }
 
+      
 
 
 
