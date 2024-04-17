@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>React para Iniciantes</title>
-
+    <link rel="stylesheet" href="style.css">
     <!-- Carrega o React, React Dom e Babel -->
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -20,14 +20,27 @@
     <script type="text/babel">
     
       const Button = () => {
-
         return <button>comprar</button>;
       }
+      const MaiNav = () => {
+        return (
+          <nav>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+        </ul>
+        </nav>
+      );
+      };
 
       const App = () => {
-        return <div>Meu App <Button /></div>;
+        return <div>
+          <MaiNav />
+          <Button />
+          </div>;
         
-      }
+      };
 
     
       ReactDOM.render(<App />, document.getElementById('app'));
