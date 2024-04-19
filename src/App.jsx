@@ -1,11 +1,21 @@
 
 import React from 'react'
 
+
+const Button = () => {
+  return(
+    <button> Teste</button>
+  )
+}
+
+
+
+
 const App = () => {
  
-
   return (
-    <h1> ola</h1>
+    <Button />
+    
   )
 }
 
