@@ -25,6 +25,7 @@ const Chaves = () =>{
     <>
     {titulo}
     <p className={ativo ? 'ativo' : 'inativo'}>{(random*100 )/ 50}</p>
+    <p>{new Date().getFullYear()}</p>
     </>
   );
 };
