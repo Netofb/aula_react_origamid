@@ -74,21 +74,36 @@ import React from 'react';
 //   </div>;
 // };
 
+const Filmes = () =>{
+  const filmes = ['Before Sunrise', 'Before Sunset', 'Before Midnight'];
+  return(
+    <ul>
+      {filmes.map((filme) =>(
+        <li key={filme}>{filme}</li>
+      ))}
+    </ul>
+  )
+}
 
 
 
 
 
-
-// const App = () => {
+const App = () => {
  
-//   return (
-//     <>
-//     <Button />
-//     <Form />
-//     <Chaves />
-//     </>
-//   );
-// };
+  return (
+    <>
+    {/* <Button />
+    <Form />
+    <Chaves /> */}
+    <Filmes />
+
+
+
+
+
+    </>
+  );
+};
 
 export default App
