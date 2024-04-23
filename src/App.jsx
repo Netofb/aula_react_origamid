@@ -113,27 +113,30 @@ const produtos = [
 
 
 
-const App = () => {
-  return (
-    <>
-      <section>
-        {produtos.map((produto) => {
-          const valor = Number(produto.preco.replace('R$ ', ''));
-          if (valor > 1500) {
-            return (
-              <div key={produto.id}>
-                <h1>{produto.nome}</h1>
-                <p>{valor}</p>
-                <p>{produto.cores.join(', ')}</p>
-              </div>
-            );
-          }
-          return null; // Se não atender à condição, retorna null
-        })}
-      </section>
-    </>
-  );
-};
 
+const App = () => {
+  
+ 
+    return(
+    <section>
+      {produtos.filter(({preco}) => Number(preco.replace('R$ ', '')) > 1500).map(({id, nome, preco, cores}) => (<div key={id}>
+        <h1>{nome}</h1>
+        <p>Preço: {preco}</p>
+        <ul>
+          {cores.map((cor) => (
+            <li style={{backgroundColor: cor, color: "white"}} key={cor}>{cor}</li>
+          ))}
+        </ul>
+      </div>
+  ))}
+   
+    </section>
+
+
+
+
+  )
+ 
+};
 
 export default App
