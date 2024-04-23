@@ -114,20 +114,26 @@ const produtos = [
 
 
 const App = () => {
- 
   return (
     <>
-    {/* <Button />
-    <Form />
-    <Chaves /> */}
-    {/* <Filmes /> */}
-    <section></section>
-
-
-
-
+      <section>
+        {produtos.map((produto) => {
+          const valor = Number(produto.preco.replace('R$ ', ''));
+          if (valor > 1500) {
+            return (
+              <div key={produto.id}>
+                <h1>{produto.nome}</h1>
+                <p>{valor}</p>
+                <p>{produto.cores.join(', ')}</p>
+              </div>
+            );
+          }
+          return null; // Se não atender à condição, retorna null
+        })}
+      </section>
     </>
   );
 };
+
 
 export default App
