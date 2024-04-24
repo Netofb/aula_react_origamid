@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Header from './Header';
+import Footer from './Footer';
 
 // const Button = () => {
 //   return(
@@ -135,7 +136,15 @@ import Header from './Header';
 //      <button onClick={handleClick} onMouseMove={handleClick}> Clique</button>
 //     )
 // }
+const App = () =>{
 
+  return(
+    <>
+    <Header />
+    <Footer />
+    </>
+  )
+}
 
 
 

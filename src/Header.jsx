@@ -5,7 +5,14 @@ import React from "react";
 const Header = () => {
     return(
         <header>
-            Ola
+            <nav>
+                <ul>
+                    <li>link 1</li>
+                    <li>link 2</li>
+                    <li>link 3</li>
+                </ul>
+            </nav>
         </header>
-    )
-}
+    );
+};
+export default Header;
