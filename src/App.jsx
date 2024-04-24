@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import Header from './Header';
 
 // const Button = () => {
 //   return(
@@ -126,13 +126,17 @@ import React from 'react';
 
 
 
-const App = () => {
-  const handleClick = (event) =>{
-    console.log(event)
-  }
+// const App = () => {
+//   const handleClick = (event) =>{
+//     console.log(event)
+//   }
 
-    return(
-     <button onClick={handleClick} onMouseMove={handleClick}> Clique</button>
-    )
-}
+//     return(
+//      <button onClick={handleClick} onMouseMove={handleClick}> Clique</button>
+//     )
+// }
+
+
+
+
 export default App
