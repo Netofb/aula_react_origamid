@@ -3,6 +3,8 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Form from './Form/Form';
+import Produtos from './Produtos';
+import Home from './Home';
 
 // const Button = () => {
 //   return(
@@ -142,8 +144,8 @@ const App = () =>{
   return(
     <>
     <Header />
-    <Footer />
-    <Form />
+    <Produtos />
+    <Home />
     </>
   )
 }

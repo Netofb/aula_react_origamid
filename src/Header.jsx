@@ -4,15 +4,19 @@ import React from "react";
 
 const Header = () => {
     return(
-        <header>
+       <header>
             <nav>
                 <ul>
-                    <li>link 1</li>
-                    <li>link 2</li>
-                    <li>link 3</li>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li> 
+                        <a href="/produtos">Produtos</a>
+                    </li>
                 </ul>
             </nav>
-        </header>
+       </header>
+
     );
 };
 export default Header;
