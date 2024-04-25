@@ -140,12 +140,18 @@ import Home from './Home';
 //     )
 // }
 const App = () =>{
+  let Pagina = Home;
+  const { pathname } = window.location;
+  if(pathname === '/produtos'){
+    Pagina = Produtos;
+  }else {
+    Pagina = Home;
+  }
 
   return(
     <>
     <Header />
-    <Produtos />
-    <Home />
+    <Pagina />
     </>
   )
 }
@@ -153,3 +159,14 @@ const App = () =>{
 
 
 export default App
+
+
+
+
+
+
+
+
+
+
+
