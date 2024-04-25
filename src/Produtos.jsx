@@ -10,6 +10,12 @@ const Produtos = () => {
     return(
         <section>
             <Titulo texto="Produtos" />
+            {produtos.map((produto) =>(
+              <li>
+                {produto.nome}
+                
+              </li>
+            ))}
         </section>
         
     );
