@@ -139,22 +139,45 @@ import Home from './Home';
 //      <button onClick={handleClick} onMouseMove={handleClick}> Clique</button>
 //     )
 // }
-const App = () =>{
-  let Pagina = Home;
-  const { pathname } = window.location;
-  if(pathname === '/produtos'){
-    Pagina = Produtos;
-  }else {
-    Pagina = Home;
-  }
+// const App = () =>{
+//   let Pagina = Home;
+//   const { pathname } = window.location;
+//   if(pathname === '/produtos'){
+//     Pagina = Produtos;
+//   }else {
+//     Pagina = Home;
+//   }
 
-  return(
-    <>
-    <Header />
-    <Pagina />
-    </>
-  )
-}
+//   return(
+//     <>
+//     <Header />
+//     <Pagina />
+//     </>
+//   )
+// }
+
+
+const App = () => {
+  const ativo = true;
+
+  return (
+    <button disabled={!ativo}>{ativo ? 'Botão Ativo' : 'Botão Inativo'}</button>
+  );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
