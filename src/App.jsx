@@ -157,15 +157,26 @@ import Home from './Home';
 // }
 
 
+// const App = () => {
+//   const ativo = true;
+
+//   return (
+//     <button disabled={!ativo}>{ativo ? 'Botão Ativo' : 'Botão Inativo'}</button>
+//   );
+// };
+
 const App = () => {
-  const ativo = true;
+  let ativo = true;
+
+  function handleClick(){
+    ativo = false;
+  }
+
 
   return (
-    <button disabled={!ativo}>{ativo ? 'Botão Ativo' : 'Botão Inativo'}</button>
+    <button onClick={handleClick}>{ativo ? 'Botão Ativo' : 'Botão Inativo'}</button>
   );
 };
-
-
 
 
 
