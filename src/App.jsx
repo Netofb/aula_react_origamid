@@ -5,6 +5,9 @@ import Footer from './Footer';
 import Form from './Form/Form';
 import Produtos from './Produtos';
 import Home from './Home';
+import ButtonModal from './ButtonModal';
+import { useState } from 'react';
+import Modal from './Modal';
 
 // const Button = () => {
 //   return(
@@ -180,23 +183,33 @@ import Home from './Home';
 // };
 
 
-const App = () => {
+// const App = () => {
   
-  const [ativo, setAtivo] = React.useState(false);
+//   const [ativo, setAtivo] = React.useState(false);
   
 
     
 
-  function handleClick(){
-    setAtivo(!ativo)
-  }
+//   function handleClick(){
+//     setAtivo(!ativo)
+//   }
+
+//   return(
+//     <button onClick={handleClick}>{ativo ? 'Ativo' : 'Inativo'}</button>
+//   )
+// }
+
+const App=()=>{
+  const [modal, setModal] = useState(false)
 
   return(
-    <button onClick={handleClick}>{ativo ? 'Ativo' : 'Inativo'}</button>
-  )
+    <div>
+    <div>{modal ? 'Modal aberto' : 'Modal Fechado'}</div>
+    <Modal modal={modal}setModal={setModal} />
+    <ButtonModal setModal={setModal}/>
+    </div>
+  );
 }
-
-
 
 
 
