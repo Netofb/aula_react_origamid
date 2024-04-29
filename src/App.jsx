@@ -165,18 +165,19 @@ import Home from './Home';
 //   );
 // };
 
-const App = () => {
-  let ativo = true;
+// const App = () => {
+//   let ativo = true;
 
-  function handleClick(){
-    ativo = false;
-  }
+//   function handleClick(){
+//     ativo = !ativo;
+//     console.log(ativo)
+//   }
 
 
-  return (
-    <button onClick={handleClick}>{ativo ? 'Botão Ativo' : 'Botão Inativo'}</button>
-  );
-};
+//   return (
+//     <button onClick={handleClick}>{ativo ? 'Botão Ativo' : 'Botão Inativo'}</button>
+//   );
+// };
 
 
 
