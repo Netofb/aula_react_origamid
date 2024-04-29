@@ -182,19 +182,17 @@ import Home from './Home';
 
 const App = () => {
   
-  const ativoHook = React.useState(false);
-  const ativoValor = ativoHook[0];
-  const atualizaValor = ativoHook[1];
-  console.log(ativoValor);
+  const [ativo, setAtivo] = React.useState(false);
+  
 
     
 
   function handleClick(){
-    atualizaValor(!ativoValor)
+    setAtivo(!ativo)
   }
 
   return(
-    <button onClick={handleClick}>{ativoValor ? 'Ativo' : 'Inativo'}</button>
+    <button onClick={handleClick}>{ativo ? 'Ativo' : 'Inativo'}</button>
   )
 }
 
