@@ -8,6 +8,7 @@ import Home from './Home';
 import ButtonModal from './ButtonModal';
 import { useState } from 'react';
 import Modal from './Modal';
+import Produto from './Produto';
 
 // const Button = () => {
 //   return(
@@ -250,28 +251,53 @@ import Modal from './Modal';
 //     </button>
 //   );
 // };
-const App = () => {
-  // Callback no estado inicial, só será executado na criação do componente
-  const [ativo, setAtivo] = React.useState(() => {
-    const ativoLocal = window.localStorage.getItem('ativo');
-    return ativoLocal;
-  });
+// const App = () => {
+//   // Callback no estado inicial, só será executado na criação do componente
+//   const [ativo, setAtivo] = React.useState(() => {
+//     const ativoLocal = window.localStorage.getItem('ativo');
+//     return ativoLocal;
+//   });
 
-  function handleClick() {
-    setAtivo((anterior) => !anterior);
+//   function handleClick() {
+//     setAtivo((anterior) => !anterior);
+//   }
+
+//   return (
+//     <button onClick={handleClick}>
+//       {ativo ? 'Está Ativo' : 'Está Inativo'}
+//     </button>
+//   );
+// };
+
+const App = () =>{
+  const [dados, setDados] = React.useState(null);
+  const [carregando, setCarregando] = React.useState(null);
+
+  async function handleClick(event){
+    setCarregando(true);
+    const response = await fetch(`https://ranekapi.origamid.dev/json/api/produto/${event.target.innerText}`);
+    const json = await response.json();
+    setDados(json);
+    setCarregando(false);
   }
-
-  return (
-    <button onClick={handleClick}>
-      {ativo ? 'Está Ativo' : 'Está Inativo'}
-    </button>
-  );
-};
+  
 
 
+  return(
+    <div>
+      <button onClick={handleClick}>Notebook</button>
+      <button onClick={handleClick}>Smartphone</button>
+      <button onClick={handleClick}>Tablet</button>
+      {carregando && <p>Carregando...</p>}
+      {! carregando && dados && <Produto dados={dados}/>}
+    </div>
+  )
+}
 
 
-
+// https://ranekapi.origamid.dev/json/api/produto/tablet
+// https://ranekapi.origamid.dev/json/api/produto/smartphone
+// https://ranekapi.origamid.dev/json/api/produto/notebook
 
 
 export default App
