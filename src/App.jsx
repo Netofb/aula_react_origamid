@@ -269,35 +269,68 @@ import Produto from './Produto';
 //   );
 // };
 
-const App = () =>{
-  const [dados, setDados] = React.useState(null);
-  const [carregando, setCarregando] = React.useState(null);
+// const App = () =>{
+//   const [dados, setDados] = React.useState(null);
+//   const [carregando, setCarregando] = React.useState(null);
 
-  async function handleClick(event){
-    setCarregando(true);
-    const response = await fetch(`https://ranekapi.origamid.dev/json/api/produto/${event.target.innerText}`);
-    const json = await response.json();
-    setDados(json);
-    setCarregando(false);
-  }
+//   async function handleClick(event){
+//     setCarregando(true);
+//     const response = await fetch(`https://ranekapi.origamid.dev/json/api/produto/${event.target.innerText}`);
+//     const json = await response.json();
+//     setDados(json);
+//     setCarregando(false);
+//   }
   
 
 
-  return(
-    <div>
-      <button onClick={handleClick}>Notebook</button>
-      <button onClick={handleClick}>Smartphone</button>
-      <button onClick={handleClick}>Tablet</button>
-      {carregando && <p>Carregando...</p>}
-      {! carregando && dados && <Produto dados={dados}/>}
-    </div>
-  )
-}
+//   return(
+//     <div>
+//       <button onClick={handleClick}>Notebook</button>
+//       <button onClick={handleClick}>Smartphone</button>
+//       <button onClick={handleClick}>Tablet</button>
+//       {carregando && <p>Carregando...</p>}
+//       {! carregando && dados && <Produto dados={dados}/>}
+//     </div>
+//   )
+// }
 
 
 // https://ranekapi.origamid.dev/json/api/produto/tablet
 // https://ranekapi.origamid.dev/json/api/produto/smartphone
 // https://ranekapi.origamid.dev/json/api/produto/notebook
+
+
+
+const App = () => {
+  const [contar, setContar] = React.useState(0);
+
+  React.useEffect(() => {
+    console.log('Apenas quando renderiza');
+  }, []);
+
+  console.log('Sempre ocorre, mas antes do useEffect');
+
+ 
+  React.useEffect(() => {
+    const titulo = 'Clicou ';
+    document.title = titulo + contar;
+  }, [contar]);
+
+  return <button onClick={() => setContar(contar + 1)}>{contar}</button>;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 export default App
